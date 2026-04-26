@@ -1,6 +1,6 @@
 # CLI-POMODORO
 
-[![header](https://capsule-render.vercel.app/api?type=wave&color=ff6b9d%2Cffeb3b%2C9c27b0%2C4fc3f7&height=200&fontSize=60&section=header&fontAlignY=42&desc=Image-to-Mosaic+%E2%9C%A8+Text-to-Banner+CLI&descAlignY=62&descFontSize=20)](https://github.com/izag8216/cli-pomodoro)
+[![header](https://raw.githubusercontent.com/izag8216/cli-pomodoro/master/assets/header.svg)](https://github.com/izag8216/cli-pomodoro)
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-2E8B57?style=for-the-badge)](LICENSE)
