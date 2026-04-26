@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <radialGradient id="tgrad" cx="38%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#FF6B6B"/>
+      <stop offset="65%" stop-color="#e55555"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </radialGradient>
+    <radialGradient id="cgrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFDF5"/>
+      <stop offset="100%" stop-color="#F0E8D8"/>
+    </radialGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="2" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="200" fill="url(#bg)" rx="14"/>
+
+  <!-- Grid dots -->
+  <g fill="#ffffff" opacity="0.06">
+    <circle cx="15" cy="15" r="1.5"/><circle cx="40" cy="15" r="1.5"/><circle cx="65" cy="15" r="1.5"/>
+    <circle cx="15" cy="40" r="1.5"/><circle cx="40" cy="40" r="1.5"/><circle cx="65" cy="40" r="1.5"/>
+    <circle cx="335" cy="160" r="1.5"/><circle cx="360" cy="160" r="1.5"/><circle cx="385" cy="160" r="1.5"/>
+    <circle cx="335" cy="185" r="1.5"/><circle cx="360" cy="185" r="1.5"/><circle cx="385" cy="185" r="1.5"/>
+  </g>
+
+  <!-- Tomato body -->
+  <g transform="translate(60, 100)" filter="url(#shadow)">
+    <ellipse cx="0" cy="0" rx="55" ry="52" fill="url(#tgrad)"/>
+    <!-- Highlight -->
+    <ellipse cx="-16" cy="-20" rx="20" ry="13" fill="#FF8888" opacity="0.45"/>
+    <!-- Segment lines -->
+    <path d="M0,-52 Q6,-25 0,0 Q-6,-25 0,-52" fill="none" stroke="#a02020" stroke-width="1" opacity="0.25"/>
+    <path d="M-48,-18 Q-28,-6 -12,0 Q-28,6 -48,-18" fill="none" stroke="#a02020" stroke-width="1" opacity="0.25"/>
+    <path d="M48,-18 Q28,-6 12,0 Q28,6 48,-18" fill="none" stroke="#a02020" stroke-width="1" opacity="0.25"/>
+    <!-- Stem/leaf -->
+    <path d="M-6,-52 Q0,-65 6,-52 Q2,-59 0,-54 Q-2,-59 -6,-52" fill="#27ae60"/>
+    <path d="M0,-54 Q14,-64 22,-52" fill="none" stroke="#27ae60" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M0,-54 Q-14,-64 -22,-52" fill="none" stroke="#27ae60" stroke-width="3.5" stroke-linecap="round"/>
+    <ellipse cx="16" cy="-57" rx="11" ry="5" fill="#2ecc71" transform="rotate(-28, 16, -57)"/>
+    <ellipse cx="-16" cy="-57" rx="11" ry="5" fill="#2ecc71" transform="rotate(28, -16, -57)"/>
+  </g>
+
+  <!-- Clock face inside tomato -->
+  <g transform="translate(60, 100)">
+    <circle cx="0" cy="0" r="34" fill="url(#cgrad)" stroke="#b03030" stroke-width="2.5"/>
+    <!-- Hour marks -->
+    <g stroke="#b03030" stroke-width="2.5" stroke-linecap="round">
+      <line x1="0" y1="-28" x2="0" y2="-23"/>
+      <line x1="28" y1="0" x2="23" y2="0"/>
+      <line x1="0" y1="28" x2="0" y2="23"/>
+      <line x1="-28" y1="0" x2="-23" y2="0"/>
+    </g>
+    <!-- Minute marks -->
+    <g stroke="#d09080" stroke-width="1.5" stroke-linecap="round">
+      <line x1="14" y1="-24" x2="12" y2="-20"/><line x1="24" y1="-14" x2="20" y2="-12"/>
+      <line x1="24" y1="14" x2="20" y2="12"/><line x1="14" y1="24" x2="12" y2="20"/>
+      <line x1="-14" y1="24" x2="-12" y2="20"/><line x1="-24" y1="14" x2="-20" y2="12"/>
+      <line x1="-24" y1="-14" x2="-20" y2="-12"/><line x1="-14" y1="-24" x2="-12" y2="-20"/>
+    </g>
+    <!-- Hour hand (10 o'clock-ish) -->
+    <line x1="0" y1="0" x2="-11" y2="-14" stroke="#2c3e50" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Minute hand (25 past) -->
+    <line x1="0" y1="0" x2="17" y2="-5" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Center -->
+    <circle cx="0" cy="0" r="3.5" fill="#2c3e50"/>
+  </g>
+
+  <!-- Title text as paths: "cli-pomodoro" (using monospace paths) -->
+  <g transform="translate(148, 82)">
+    <!-- "cli-pomodoro" title - simplified text block -->
+    <rect x="0" y="-20" width="220" height="30" fill="none"/>
+    <!-- Since we can't render text reliably as paths, use bold visual block -->
+    <!-- Actually use a text element with a very standard monospace stack -->
+  </g>
+
+  <!-- Title: cli-pomodoro -->
+  <path id="titlePath" d="M148,85 L148,75" fill="none"/>
+  <text font-family="'SF Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="28" font-weight="bold" fill="#FFF8E7">
+    <textPath href="#titlePath" startOffset="0">cli-pomodoro</textPath>
+  </text>
+
+  <!-- Tagline 1 -->
+  <path id="tag1Path" d="M148,108 L148,100" fill="none"/>
+  <text font-family="'SF Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="12" fill="#9090a8">
+    <textPath href="#tag1Path" startOffset="0">Rich TUI Pomodoro timer</textPath>
+  </text>
+
+  <!-- Tagline 2 -->
+  <path id="tag2Path" d="M148,126 L148,118" fill="none"/>
+  <text font-family="'SF Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="12" fill="#9090a8">
+    <textPath href="#tag2Path" startOffset="0">SQLite stats + macOS notifications</textPath>
+  </text>
+
+  <!-- Badges -->
+  <g transform="translate(148, 148)">
+    <rect width="68" height="18" rx="4" fill="#c0392b" opacity="0.85"/>
+    <text x="34" y="13" font-family="'SF Mono',ui-monospace,monospace" font-size="9" fill="#FFF8E7" text-anchor="middle">25/5/15 min</text>
+
+    <rect x="76" y="0" width="50" height="18" rx="4" fill="#27ae60" opacity="0.85"/>
+    <text x="101" y="13" font-family="'SF Mono',ui-monospace,monospace" font-size="9" fill="#FFF8E7" text-anchor="middle">SQLite</text>
+
+    <rect x="134" y="0" width="42" height="18" rx="4" fill="#8e44ad" opacity="0.85"/>
+    <text x="155" y="13" font-family="'SF Mono',ui-monospace,monospace" font-size="9" fill="#FFF8E7" text-anchor="middle">Rich</text>
+  </g>
+
+  <!-- Bottom accent line -->
+  <line x1="20" y1="188" x2="380" y2="188" stroke="#c0392b" stroke-width="1.2" opacity="0.5"/>
+</svg>
